@@ -2,17 +2,17 @@
     "packages": [
         {
             "name": "siel/acumulus",
-            "version": "8.3.3",
-            "version_normalized": "8.3.3.0",
+            "version": "8.3.5",
+            "version_normalized": "8.3.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SIELOnline/libAcumulus.git",
-                "reference": "e29ad9c451eef196113d5e6a22ccf34e7921c22e"
+                "reference": "5eddbf9a3856c7ea95b21cf3c5e96418eccb7c99"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SIELOnline/libAcumulus/zipball/e29ad9c451eef196113d5e6a22ccf34e7921c22e",
-                "reference": "e29ad9c451eef196113d5e6a22ccf34e7921c22e",
+                "url": "https://api.github.com/repos/SIELOnline/libAcumulus/zipball/5eddbf9a3856c7ea95b21cf3c5e96418eccb7c99",
+                "reference": "5eddbf9a3856c7ea95b21cf3c5e96418eccb7c99",
                 "shasum": ""
             },
             "require": {
@@ -26,7 +26,7 @@
             "require-dev": {
                 "phpunit/phpunit": "^9"
             },
-            "time": "2024-10-19T14:51:28+00:00",
+            "time": "2024-11-01T18:17:53+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -41,7 +41,7 @@
             "description": "Siel Acumulus Web API library, common to all web shop plugins",
             "support": {
                 "issues": "https://github.com/SIELOnline/libAcumulus/issues",
-                "source": "https://github.com/SIELOnline/libAcumulus/tree/8.3.3"
+                "source": "https://github.com/SIELOnline/libAcumulus/tree/8.3.5"
             },
             "install-path": "../siel/acumulus"
         }

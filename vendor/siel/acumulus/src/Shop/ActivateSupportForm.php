@@ -15,6 +15,8 @@ use Siel\Acumulus\Helpers\Log;
 use Siel\Acumulus\Helpers\Severity;
 use Siel\Acumulus\Helpers\Translator;
 
+use function sprintf;
+
 /**
  * Provides the "Activate pro support" form.
  *
@@ -117,8 +119,7 @@ class ActivateSupportForm extends Form
         ];
 
         // 2nd fieldset: About.
-        $message = $this->checkAccountSettings();
-        $accountStatus = $this->emptyCredentials() ? null : empty($message);
+        $accountStatus = $this->getAccountStatus();
         $fields['versionInformation'] = $this->getAboutBlock($accountStatus);
 
         return $fields;

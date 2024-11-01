@@ -17,6 +17,7 @@ use function define;
 use function defined;
 use function in_array;
 use function is_string;
+use function sprintf;
 use function strlen;
 
 /**
@@ -34,11 +35,7 @@ class HttpRequest
     protected ?string $method = null;
     protected ?string $uri = null;
     protected array $options = [];
-    /**
-     * @var array|string|null
-     *   See {@see getBody()}.
-     */
-    protected $body;
+    protected string|array|null $body = null;
     protected ?HttpResponse $httpResponse = null;
 
     /**
@@ -86,7 +83,7 @@ class HttpRequest
      * @return array|string|null
      *   The contents of the body, null if empty or not yet set.
      */
-    public function getBody()
+    public function getBody(): array|string|null
     {
         return $this->body;
     }
@@ -147,8 +144,7 @@ class HttpRequest
      */
     public function post(
         string $uri,
-        #[SensitiveParameter]
-        $postFields
+        #[SensitiveParameter] array|string $postFields
     ): HttpResponse {
         return $this->execute('POST', $uri, $postFields);
     }
@@ -179,8 +175,7 @@ class HttpRequest
     protected function execute(
         string $method,
         string $uri,
-        #[SensitiveParameter]
-        $body = null
+        #[SensitiveParameter] array|string $body = null
     ): HttpResponse {
         $method = strtoupper($method);
         assert(in_array($method, ['GET', 'POST']), 'HttpRequest::execute(): non-supported method.');

@@ -9,7 +9,7 @@ declare(strict_types=1);
 
 namespace Siel\Acumulus;
 
-const Version = '8.3.3';
+const Version = '8.3.5';
 
 namespace Siel\Acumulus\Helpers;
 
@@ -346,6 +346,7 @@ class Container
         return $this->getInstance('CrashReporter', 'Helpers', [
             $this->getMailer(),
             $this->getEnvironment(),
+            $this->getUtil(),
             $this->getTranslator(),
             $this->getLog(),
         ]);
@@ -723,6 +724,7 @@ class Container
             $this->getShopCapabilities(),
             $this->getConfig(),
             $this->getEnvironment(),
+            $this->getUtil(),
             $this->getTranslator(),
         ]);
     }
